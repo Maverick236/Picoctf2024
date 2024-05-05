@@ -1,0 +1,3 @@
+I unziped the challenge file and scanned the QR code with my phone
+emailed the flag to myself and turned it in
+picoCTF{p33k_@_b00_0194a007}

